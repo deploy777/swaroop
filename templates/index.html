@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KIET Engineering College - Real-time Chat Application">
+    <title>KIET Chat — Real-time Messaging</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>">
+</head>
+<body>
+
+    <!-- ANIMATED BACKGROUND -->
+    <div class="bg-particles">
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+    </div>
+
+    <!-- ===== LOGIN SCREEN ===== -->
+    <div class="login-screen" id="loginScreen">
+        <div class="login-card">
+            <div class="login-logo">💬</div>
+            <h1>KIET Chat</h1>
+            <p>Real-time messaging for KIET Engineering College</p>
+            <div class="input-group">
+                <input type="text" id="usernameInput" placeholder="Enter your name" maxlength="30" autocomplete="off" autofocus>
+                <span class="icon">👤</span>
+            </div>
+            <button class="join-btn" id="joinBtn">
+                Join Chat
+                <span class="shine"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ===== CHAT CONTAINER ===== -->
+    <div class="chat-container" id="chatContainer">
+
+        <!-- HEADER -->
+        <div class="chat-header">
+            <div class="header-left">
+                <div class="header-logo">💬</div>
+                <div class="header-info">
+                    <h2>KIET Engineering College</h2>
+                    <div class="header-status">
+                        <div class="status-dot"></div>
+                        <span id="statusText">Online</span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="online-badge">
+                    <div class="count" id="onlineCount">0</div>
+                    <span>Online</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- MESSAGES -->
+        <div class="messages-area" id="messagesArea">
+            <!-- Messages render here -->
+        </div>
+
+        <!-- TYPING INDICATOR -->
+        <div class="typing-indicator" id="typingIndicator">
+            <div class="typing-dots">
+                <span></span><span></span><span></span>
+            </div>
+            <span><strong id="typingUser"></strong> is typing...</span>
+        </div>
+
+        <!-- EMOJI PICKER -->
+        <div class="emoji-picker" id="emojiPicker">
+            <div class="emoji-grid"></div>
+        </div>
+
+        <!-- INPUT AREA -->
+        <div class="input-area">
+            <div class="input-wrapper">
+                <div class="input-box">
+                    <textarea id="messageInput" placeholder="Type a message..." rows="1"></textarea>
+                    <div class="input-actions">
+                        <button class="action-btn" id="emojiBtn" title="Emoji">😊</button>
+                        <button class="action-btn" id="fileBtn" title="Send File">📁</button>
+                        <button class="action-btn" id="imageBtn" title="Send Image">🖼️</button>
+                    </div>
+                </div>
+                <button class="send-btn" id="sendBtn" title="Send Message">➤</button>
+            </div>
+        </div>
+
+        <!-- HIDDEN FILE INPUTS -->
+        <input type="file" id="fileInput" hidden>
+        <input type="file" id="imageInput" accept="image/*" hidden>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <img id="lightboxImg" src="" alt="Preview">
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
